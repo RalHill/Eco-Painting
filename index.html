@@ -1,0 +1,2523 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Eco Painting — Toronto &amp; GTA eco-friendly painting. Low-VOC paints, careful prep, and finishes you will love. Free estimates.">
+<title>Eco Painting — Sustainable Painting for Toronto &amp; the GTA</title>
+
+<!-- Schema.org FAQ markup -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How long has Eco Painting been in business?","acceptedAnswer":{"@type":"Answer","text":"Eco Painting has served Toronto and the GTA for over two decades with low-VOC products and meticulous workmanship."}},
+    {"@type":"Question","name":"What areas does Eco Painting serve?","acceptedAnswer":{"@type":"Answer","text":"We serve Toronto and the Greater Toronto Area including Scarborough, Mississauga, Brampton, Markham, and Richmond Hill."}},
+    {"@type":"Question","name":"Do you provide free estimates?","acceptedAnswer":{"@type":"Answer","text":"Yes! Free, no-obligation on-site estimates for all projects. We make the process quick and easy."}},
+    {"@type":"Question","name":"Are your painters licensed and insured?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. All painters are fully licensed, insured, and carry comprehensive liability coverage."}}
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   GOOGLE FONTS
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap');
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  /* Brand — ecopainting logo palette */
+  --charcoal:     #54565B;
+  --navy:         #3D4248;
+  --navy-dark:    #25292E;
+  --navy-mid:     #3A4A55;
+  --accent:       #5EB9E9;
+  --accent-dark:  #3A9FD4;
+  --accent-soft:  #E8F6FC;
+  --leaf:         #77BC43;
+  --leaf-dark:    #5fa334;
+  --green:        var(--leaf);
+  --green-dark:   var(--leaf-dark);
+  --white:        #ffffff;
+  --off-white:    #F6F8F9;
+  --text:         #2E3238;
+  --text-mid:     #54565B;
+  --text-light:   #7A7D85;
+  --border:       #E2E6EA;
+
+  --shadow-sm:  0 2px 12px rgba(37,41,46,.06);
+  --shadow-md:  0 12px 40px rgba(37,41,46,.1);
+  --shadow-lg:  0 24px 64px rgba(37,41,46,.14);
+
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  22px;
+  --radius-xl:  36px;
+
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:    cubic-bezier(0.7, 0, 0.84, 0);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+h1,h2,h3,h4,h5 { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; line-height: 1.15; }
+h1 { font-size: clamp(38px, 6vw, 68px); font-weight: 800; }
+h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 700; }
+h3 { font-size: clamp(20px, 2.5vw, 28px); font-weight: 600; }
+h4 { font-size: 18px; font-weight: 600; }
+
+.section-label {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.section-title { color: var(--navy); margin-bottom: 16px; }
+.section-subtitle { font-size: 17px; color: var(--text-mid); max-width: 600px; }
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+.wrap-sm { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+section { position: relative; }
+
+/* ============================================================
+   SKIP LINK
+   ============================================================ */
+.skip-link {
+  position: absolute; top: -99px; left: 16px;
+  background: var(--leaf); color: white; padding: 8px 16px;
+  border-radius: 4px; font-weight: 600; z-index: 9999;
+  transition: top .2s;
+}
+.skip-link:focus { top: 16px; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  transition: background .35s var(--ease-out), box-shadow .35s var(--ease-out), padding .35s var(--ease-out);
+  padding: 20px 0;
+}
+.site-header.scrolled {
+  background: rgba(37,41,46,.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 24px rgba(0,0,0,.18);
+  padding: 12px 0;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.header-logo { height: 48px; width: auto; max-width: 240px; object-fit: contain; object-position: left center; }
+.header-nav {
+  display: flex;
+  gap: 32px;
+}
+.header-nav a {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,.85);
+  transition: color .2s;
+  white-space: nowrap;
+}
+.header-nav a:hover { color: white; }
+.header-nav a.nav-active { color: white; position: relative; }
+.header-nav a.nav-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 2px;
+  background: var(--leaf);
+  border-radius: 2px;
+}
+.header-actions { display: flex; align-items: center; gap: 12px; }
+
+.btn-phone-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid rgba(255,255,255,.35);
+  transition: all .2s;
+  white-space: nowrap;
+  min-height: 40px;
+}
+.btn-phone-header:hover { border-color: white; background: rgba(255,255,255,.08); }
+.btn-phone-header svg { flex-shrink: 0; }
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: white;
+  background: var(--leaf);
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  transition: all .2s var(--ease-out);
+  min-height: 44px;
+  white-space: nowrap;
+  touch-action: manipulation;
+}
+.btn-cta:hover { background: var(--leaf-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(119,188,67,.4); }
+.btn-cta:active { transform: translateY(0); }
+.btn-cta:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+@media (max-width: 900px) {
+  .header-nav { display: none; }
+  .btn-phone-header { display: none; }
+}
+@media (max-width: 640px) {
+  .site-header { padding: 14px 0; }
+  .header-logo { height: 40px; max-width: 200px; }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  min-height: min(100dvh, 920px);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-dark);
+  padding-top: 100px;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center 30%;
+  opacity: .42;
+  transform: scale(1.05);
+  transition: transform 8s ease-out;
+}
+.hero-bg.loaded { transform: scale(1); }
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    108deg,
+    rgba(37,41,46,.88) 0%,
+    rgba(37,41,46,.58) 48%,
+    rgba(61,66,72,.22) 100%
+  );
+}
+.hero-gradient-bottom {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 200px;
+  background: linear-gradient(to top, rgba(37,41,46,.98) 0%, transparent 100%);
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 60px 0;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px 6px 8px;
+  border-radius: 40px;
+  margin-bottom: 28px;
+  animation: fadeSlideUp .7s var(--ease-out) both;
+}
+.hero-eyebrow img {
+  height: 28px;
+  width: auto;
+}
+.hero-eyebrow-text {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.95);
+  letter-spacing: .5px;
+}
+.hero h1 {
+  color: white;
+  margin-bottom: 20px;
+  animation: fadeSlideUp .7s .1s var(--ease-out) both;
+}
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, #8FD4FF, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: clamp(16px, 2vw, 20px);
+  color: rgba(255,255,255,.8);
+  max-width: 580px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  animation: fadeSlideUp .7s .2s var(--ease-out) both;
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+  animation: fadeSlideUp .7s .3s var(--ease-out) both;
+}
+.hero-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px;
+  border-radius: 40px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+}
+.hero-badge-val {
+  color: #B8E8FF;
+  font-size: 15px;
+  font-weight: 800;
+}
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  animation: fadeSlideUp .7s .4s var(--ease-out) both;
+}
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  background: var(--leaf);
+  padding: 16px 32px;
+  border-radius: var(--radius-sm);
+  transition: all .25s var(--ease-out);
+  min-height: 56px;
+  touch-action: manipulation;
+  box-shadow: 0 8px 32px rgba(119,188,67,.45);
+}
+.btn-hero-primary:hover { background: var(--leaf-dark); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(119,188,67,.55); }
+.btn-hero-primary:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+.btn-hero-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  padding: 16px 28px;
+  border-radius: var(--radius-sm);
+  border: 2px solid rgba(255,255,255,.4);
+  transition: all .25s var(--ease-out);
+  min-height: 56px;
+  touch-action: manipulation;
+}
+.btn-hero-phone:hover { border-color: white; background: rgba(255,255,255,.08); }
+.btn-hero-phone:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+
+@media (max-width: 640px) {
+  .hero { min-height: min(100dvh, 880px); }
+  .hero-ctas { flex-direction: column; }
+  .btn-hero-primary, .btn-hero-phone { width: 100%; justify-content: center; }
+}
+
+/* ============================================================
+   TRUST RIBBON
+   ============================================================ */
+.trust-ribbon {
+  background: linear-gradient(90deg, var(--accent-dark) 0%, var(--leaf) 100%);
+  padding: 0;
+  overflow: hidden;
+}
+.trust-ribbon-inner {
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+}
+.trust-ribbon-inner::-webkit-scrollbar { display: none; }
+.trust-ribbon-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 28px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  border-right: 1px solid rgba(255,255,255,.2);
+  white-space: nowrap;
+}
+.trust-ribbon-item svg { flex-shrink: 0; opacity: .9; }
+.trust-ribbon-item-text { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 14px; font-weight: 600; color: white; }
+.trust-ribbon-item-text strong { display: block; font-size: 16px; font-weight: 800; }
+
+/* ============================================================
+   STATS SECTION
+   ============================================================ */
+.stats-section {
+  padding: 72px 0;
+  background: var(--off-white);
+}
+.stats-header { text-align: center; margin-bottom: 40px; }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.stat-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: all .35s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--navy), var(--accent));
+  transition: background .35s var(--ease-out);
+}
+.stat-card:hover::before { background: linear-gradient(90deg, var(--accent), var(--leaf)); }
+.stat-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.stat-num {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 10px;
+  display: block;
+}
+.stat-num .suffix { color: var(--leaf); }
+.stat-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-mid);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; } .stat-card { padding: 28px 20px; } }
+
+/* ============================================================
+   AWARDS SHOWCASE
+   ============================================================ */
+.awards-section {
+  padding: 80px 0;
+  background: var(--navy);
+  overflow: hidden;
+}
+.awards-inner {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+.awards-text { flex: 1; }
+.awards-text .section-label { color: rgba(255,255,255,.5); }
+.awards-text h2 { color: white; margin-bottom: 16px; }
+.awards-text p { color: rgba(255,255,255,.7); font-size: 17px; max-width: 460px; line-height: 1.8; }
+.awards-visual {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.award-badge-large {
+  text-align: center;
+  color: white;
+}
+.award-badge-large img {
+  height: 160px;
+  width: auto;
+  filter: drop-shadow(0 12px 32px rgba(0,0,0,.4));
+  transition: transform .4s var(--ease-out);
+}
+.award-badge-large:hover img { transform: scale(1.05) rotate(-2deg); }
+.award-badge-label {
+  margin-top: 12px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.7);
+  letter-spacing: 1px;
+}
+.award-crown {
+  opacity: .15;
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  pointer-events: none;
+}
+.award-crown img { height: 320px; width: auto; }
+.awards-stars-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.awards-stars-row .star-icon { color: #FBBF24; font-size: 22px; }
+.awards-stars-text {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+}
+.awards-stars-text span { color: rgba(255,255,255,.55); font-weight: 400; font-size: 14px; }
+
+@media (max-width: 900px) {
+  .awards-inner { flex-direction: column; gap: 48px; text-align: center; }
+  .awards-text p { margin: 0 auto; }
+  .awards-stars-row { justify-content: center; }
+  .awards-visual { justify-content: center; }
+}
+
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
+.about-section {
+  padding: 80px 0;
+  background: white;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.about-media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  background: var(--off-white);
+}
+.about-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+.about-media-badge {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.about-media-badge-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--green);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+}
+.about-media-badge-text strong {
+  display: block;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--navy);
+}
+.about-media-badge-text span {
+  font-size: 12px;
+  color: var(--text-mid);
+  font-weight: 500;
+}
+.about-content .section-label { margin-bottom: 12px; }
+.about-content h2 { margin-bottom: 20px; }
+.about-content p { color: var(--text-mid); line-height: 1.8; margin-bottom: 16px; }
+.about-quote {
+  border-left: 4px solid var(--leaf);
+  padding: 20px 24px 20px 20px;
+  background: var(--off-white);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: 28px 0;
+  font-style: italic;
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.65;
+  position: relative;
+}
+.about-quote::before {
+  content: '\201C';
+  font-family: Georgia, serif;
+  font-size: 64px;
+  line-height: 0;
+  color: var(--accent-dark);
+  opacity: .25;
+  position: absolute;
+  top: 28px;
+  right: 16px;
+  font-style: normal;
+}
+.about-quote cite {
+  display: block;
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-mid);
+  margin-top: 8px;
+  letter-spacing: .5px;
+}
+.about-checklist { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+.about-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+}
+.check-icon {
+  width: 22px;
+  height: 22px;
+  background: rgba(119,188,67,.14);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--leaf-dark);
+}
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-media { aspect-ratio: 16/9; max-height: 400px; }
+}
+
+/* ============================================================
+   SERVICES SECTION
+   ============================================================ */
+.services-section {
+  padding: 80px 0;
+  background: var(--off-white);
+}
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.services-grid .service-card-featured {
+  grid-column: span 2;
+}
+.service-card-v2 {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: all .35s var(--ease-out);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.service-card-v2::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--navy-dark) 0%, #3D5A6B 100%);
+  opacity: 0;
+  transition: opacity .35s var(--ease-out);
+  border-radius: inherit;
+}
+.service-card-v2:hover::after { opacity: 1; }
+.service-card-v2 * { position: relative; z-index: 1; }
+.service-card-v2:hover h4 { color: white; }
+.service-card-v2:hover p { color: rgba(255,255,255,.75); }
+.service-card-v2:hover .service-icon-wrap { background: rgba(255,255,255,.15); }
+.service-card-v2:hover .service-icon-wrap svg { color: white; }
+.service-card-v2:hover .service-arrow { color: var(--leaf); }
+.service-icon-wrap {
+  width: 52px;
+  height: 52px;
+  background: rgba(94,185,233,.12);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .35s;
+}
+.service-icon-wrap svg { color: var(--accent-dark); transition: color .35s; }
+.service-card-v2 h4 { color: var(--navy); transition: color .35s; margin: 0; }
+.service-card-v2 p { color: var(--text-mid); font-size: 14px; line-height: 1.7; margin: 0; flex: 1; transition: color .35s; }
+.service-arrow {
+  align-self: flex-start;
+  color: var(--text-light);
+  transition: color .35s, transform .25s;
+  font-size: 22px;
+}
+.service-card-v2:hover .service-arrow { transform: translateX(4px); }
+.service-card-v2:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.service-cta-row { text-align: center; }
+
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .services-grid .service-card-featured { grid-column: span 1; }
+}
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   WHY CHOOSE US
+   ============================================================ */
+.why-section {
+  padding: 72px 0;
+  background: white;
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.why-list { display: flex; flex-direction: column; gap: 24px; }
+.why-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  transition: all .3s var(--ease-out);
+}
+.why-item:hover { border-color: var(--accent); box-shadow: var(--shadow-sm); transform: translateX(6px); }
+.why-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--leaf), #9FD86A);
+}
+.why-icon svg { color: white; }
+.why-item-body h4 { color: var(--navy); margin-bottom: 6px; }
+.why-item-body p { color: var(--text-mid); font-size: 14px; line-height: 1.7; margin: 0; }
+.why-visual {
+  background: var(--navy);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.why-visual::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(94,185,233,.22) 0%, transparent 70%);
+  top: -80px;
+  right: -80px;
+}
+.why-visual-rating {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: clamp(48px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1;
+  color: white;
+  margin-bottom: 6px;
+}
+.why-visual-rating .out-of { font-size: 32px; color: rgba(255,255,255,.5); font-weight: 500; }
+.why-visual-stars { font-size: 24px; color: #FBBF24; margin-bottom: 12px; letter-spacing: 4px; }
+.why-visual-source { font-size: 13px; color: rgba(255,255,255,.55); font-weight: 500; margin-bottom: 20px; }
+.why-visual-divider { height: 1px; background: rgba(255,255,255,.15); margin-bottom: 20px; }
+.why-visual-stat { margin-bottom: 14px; }
+.why-visual-stat-num {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--leaf);
+}
+.why-visual-stat-label { font-size: 13px; color: rgba(255,255,255,.6); font-weight: 500; }
+
+@media (max-width: 900px) {
+  .why-grid { grid-template-columns: 1fr; gap: 48px; }
+  .why-visual { padding: 36px 28px; }
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonials-section {
+  padding: 72px 0;
+  background: var(--off-white);
+  overflow: hidden;
+}
+.testimonials-header { margin-bottom: 40px; }
+.testimonials-track-wrap { overflow: hidden; }
+.testimonials-track {
+  display: flex;
+  gap: 24px;
+  transition: transform .5s var(--ease-out);
+  will-change: transform;
+}
+.testimonial-card-v2 {
+  flex-shrink: 0;
+  width: calc((100% - 48px) / 3);
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: all .3s var(--ease-out);
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-card-v2:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.t-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.t-stars { color: #FBBF24; font-size: 16px; letter-spacing: 2px; }
+.t-source-badge {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+.t-source-badge.homestars { background: rgba(119,188,67,.12); color: var(--leaf-dark); }
+.t-source-badge.google { background: rgba(66,133,244,.1); color: #4285F4; }
+.t-quote {
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.75;
+  flex: 1;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.t-quote::before { content: '\201C'; font-size: 28px; color: var(--leaf-dark); line-height: 0; vertical-align: -12px; margin-right: 4px; font-style: normal; }
+.t-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.t-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy-dark), #3D5A6B);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  flex-shrink: 0;
+}
+.t-name { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 700; font-size: 14px; color: var(--navy); }
+.t-location { font-size: 12px; color: var(--text-light); }
+.testimonials-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+.t-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  border: none;
+  transition: all .3s;
+  cursor: pointer;
+}
+.t-dot.active { width: 24px; border-radius: 4px; background: var(--accent); }
+.t-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .2s;
+  color: var(--text-mid);
+}
+.t-arrow:hover { border-color: var(--accent); color: var(--accent); background: rgba(94,185,233,.06); }
+.t-arrow:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+@media (max-width: 1024px) {
+  .testimonial-card-v2 { width: calc((100% - 24px) / 2); }
+}
+@media (max-width: 640px) {
+  .testimonial-card-v2 { width: calc(100% - 24px); }
+}
+
+/* ============================================================
+   SERVICE AREAS
+   ============================================================ */
+.areas-section {
+  padding: 80px 0;
+  background: white;
+}
+.areas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.areas-content .section-label { margin-bottom: 12px; }
+.areas-content h2 { margin-bottom: 16px; }
+.areas-content p { color: var(--text-mid); font-size: 17px; line-height: 1.8; margin-bottom: 32px; }
+.areas-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+.area-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--off-white);
+  border: 1.5px solid var(--border);
+  border-radius: 40px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  transition: all .2s;
+}
+.area-chip:hover { border-color: var(--accent); background: rgba(94,185,233,.04); color: var(--accent); }
+.area-chip svg { color: var(--leaf); transition: color .2s; }
+.area-chip:hover svg { color: var(--accent); }
+.areas-map-placeholder {
+  background: linear-gradient(145deg, var(--navy-dark) 0%, #3D5A6B 55%, var(--leaf-dark) 100%);
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  gap: 16px;
+  color: rgba(255,255,255,.8);
+}
+.areas-map-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 60% 45%, rgba(94,185,233,.18) 0%, transparent 65%);
+}
+.areas-map-dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.map-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--leaf);
+  box-shadow: 0 0 0 4px rgba(119,188,67,.28);
+}
+.map-dot::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: rgba(119,188,67,.14);
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.8); opacity: 0; }
+}
+.areas-map-label {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.areas-map-label strong { display: block; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px; }
+.areas-map-label span { font-size: 13px; color: rgba(255,255,255,.6); }
+@media (prefers-reduced-motion: reduce) { .map-dot::after { animation: none; } }
+
+@media (max-width: 900px) {
+  .areas-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-section {
+  padding: 80px 0;
+  background: var(--off-white);
+}
+.faq-header { text-align: center; margin-bottom: 40px; }
+.faq-header .section-subtitle { margin: 0 auto; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item-v2 {
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+  transition: border-color .25s, box-shadow .25s;
+}
+.faq-item-v2.open { border-color: var(--accent); box-shadow: 0 4px 16px rgba(94,185,233,.08); }
+.faq-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 22px 28px;
+  text-align: left;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--navy);
+  gap: 16px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  min-height: 56px;
+  transition: color .2s;
+}
+.faq-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; border-radius: var(--radius-md); }
+.faq-item-v2.open .faq-btn { color: var(--accent); }
+.faq-chevron {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  background: var(--off-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-mid);
+  transition: transform .3s var(--ease-out), background .2s, color .2s;
+}
+.faq-item-v2.open .faq-chevron { transform: rotate(180deg); background: var(--accent); color: white; }
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s var(--ease-out);
+}
+.faq-item-v2.open .faq-body { max-height: 400px; }
+.faq-body-inner {
+  padding: 0 28px 24px;
+  color: var(--text-mid);
+  font-size: 15px;
+  line-height: 1.8;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+/* ============================================================
+   CTA BAND
+   ============================================================ */
+.cta-band {
+  padding: 72px 0;
+  background: linear-gradient(135deg, var(--navy-dark) 0%, #3D5A6B 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(94,185,233,.2) 0%, transparent 60%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.cta-band-inner { position: relative; z-index: 1; }
+.cta-band .section-label { color: rgba(255,255,255,.5); }
+.cta-band h2 { color: white; max-width: 700px; margin: 0 auto 16px; }
+.cta-band p { color: rgba(255,255,255,.65); font-size: 18px; max-width: 520px; margin: 0 auto 40px; }
+.cta-band-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-band-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  background: var(--leaf);
+  padding: 16px 36px;
+  border-radius: var(--radius-sm);
+  min-height: 56px;
+  transition: all .25s var(--ease-out);
+  box-shadow: 0 8px 32px rgba(119,188,67,.4);
+  touch-action: manipulation;
+}
+.btn-band-primary:hover { background: var(--leaf-dark); transform: translateY(-2px); }
+.btn-band-primary:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+.btn-band-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  padding: 16px 32px;
+  border-radius: var(--radius-sm);
+  border: 2px solid rgba(255,255,255,.35);
+  min-height: 56px;
+  transition: all .25s;
+  touch-action: manipulation;
+}
+.btn-band-secondary:hover { border-color: white; background: rgba(255,255,255,.08); }
+.btn-band-secondary:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--navy-dark);
+  padding: 64px 0 0;
+  color: rgba(255,255,255,.7);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.footer-brand img { height: 48px; width: auto; max-width: 220px; object-fit: contain; object-position: left center; margin-bottom: 20px; }
+.footer-brand p { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,.55); max-width: 300px; }
+.footer-social { display: flex; gap: 10px; margin-top: 24px; }
+.footer-social-btn {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.2);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.6);
+  transition: all .2s;
+}
+.footer-social-btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(94,185,233,.08); }
+.footer-social-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.footer-col h5 {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+.footer-col a {
+  font-size: 14px;
+  color: rgba(255,255,255,.55);
+  transition: color .2s;
+}
+.footer-col a:hover { color: white; }
+.footer-col a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+.footer-contact-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px;
+  color: rgba(255,255,255,.55);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.footer-contact-item svg { flex-shrink: 0; margin-top: 1px; color: var(--accent); }
+.footer-contact-item a { color: rgba(255,255,255,.75); transition: color .2s; }
+.footer-contact-item a:hover { color: white; }
+.footer-bottom {
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: rgba(255,255,255,.35);
+}
+.footer-bottom a { color: rgba(255,255,255,.45); transition: color .2s; }
+.footer-bottom a:hover { color: rgba(255,255,255,.8); }
+
+@media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(37,41,46,.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s var(--ease-out);
+}
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-box {
+  background: white;
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(24px) scale(.97);
+  transition: transform .35s var(--ease-out), opacity .35s;
+  opacity: 0;
+}
+.modal-overlay.open .modal-box {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+.modal-head {
+  background: linear-gradient(135deg, var(--navy-dark), #3D5A6B);
+  padding: 32px 36px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.modal-head-text .section-label { color: rgba(255,255,255,.5); margin-bottom: 6px; }
+.modal-head h3 { color: white; margin: 0; font-size: 24px; }
+.modal-close-btn {
+  width: 40px; height: 40px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  transition: all .2s;
+  cursor: pointer;
+}
+.modal-close-btn:hover { background: rgba(255,255,255,.2); }
+.modal-close-btn:focus-visible { outline: 3px solid white; outline-offset: 2px; }
+.modal-body { padding: 36px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 20px; }
+.form-group label {
+  display: block;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--off-white);
+  transition: border-color .2s, box-shadow .2s, background .2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--leaf);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(119,188,67,.15);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--leaf);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .25s var(--ease-out);
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.form-submit-btn:hover { background: var(--leaf-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(119,188,67,.35); }
+.form-submit-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+.form-submit-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.modal-success-state {
+  text-align: center;
+  padding: 48px 36px;
+  display: none;
+}
+.modal-success-state.show { display: block; }
+.success-circle {
+  width: 80px; height: 80px;
+  background: linear-gradient(135deg, var(--leaf), #9FD86A);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 36px;
+  color: white;
+  box-shadow: 0 8px 24px rgba(119,188,67,.35);
+}
+.modal-success-state h3 { color: var(--navy); margin-bottom: 12px; font-size: 26px; }
+.modal-success-state p { color: var(--text-mid); margin-bottom: 8px; }
+.success-detail {
+  display: inline-block;
+  background: var(--off-white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 20px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 16px 0 28px;
+}
+
+@media (max-width: 600px) {
+  .modal-head, .modal-body { padding: 24px 20px; }
+  .form-row { grid-template-columns: 1fr; }
+  .modal-success-state { padding: 32px 20px; }
+}
+
+/* ============================================================
+   MOBILE CTA BAR
+   ============================================================ */
+.mobile-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: white;
+  border-top: 1px solid var(--border);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  z-index: 800;
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,.1);
+}
+.mobile-bar.visible { display: grid; }
+@media (min-width: 769px) { .mobile-bar { display: none !important; } }
+.mobile-bar-call {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px;
+  background: var(--green);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  min-height: 48px;
+  touch-action: manipulation;
+  transition: background .2s;
+}
+.mobile-bar-call:hover { background: var(--green-dark); }
+.mobile-bar-call:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+.mobile-bar-book {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px;
+  background: var(--leaf);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  min-height: 48px;
+  touch-action: manipulation;
+  border: none;
+  cursor: pointer;
+  transition: background .2s;
+}
+.mobile-bar-book:hover { background: var(--leaf-dark); }
+.mobile-bar-book:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes countUp { from { opacity: 0; } to { opacity: 1; } }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .6s var(--ease-out), transform .6s var(--ease-out);
+}
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+.reveal-delay-4 { transition-delay: .4s; }
+
+/* ============================================================
+   UTILITY
+   ============================================================ */
+.text-center { text-align: center; }
+.mt-8 { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.mt-32 { margin-top: 32px; }
+.mb-24 { margin-bottom: 24px; }
+</style>
+</head>
+<body>
+
+<!-- Skip link -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header" id="site-header">
+  <div class="wrap">
+    <div class="header-inner">
+      <a href="#" aria-label="Eco Painting — Home">
+        <img src="./ecopainting-logo.png" alt="Eco Painting" class="header-logo" fetchpriority="high">
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#areas">Areas</a>
+      </nav>
+      <div class="header-actions">
+        <a href="tel:+14165551234" class="btn-phone-header" aria-label="Call us at 416-555-1234">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.8a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8 8.09A16 16 0 0 0 14 14l.91-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          416-555-1234
+        </a>
+        <button class="btn-cta" onclick="openModal()">
+          Get Free Quote
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<main id="main-content">
+<section class="hero" aria-label="Hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-gradient-bottom"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-eyebrow">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#77BC43" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4-4 8-8 8-14a8 8 0 1 0-16 0c0 6 4 10 8 14z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+      <span class="hero-eyebrow-text">Low-VOC paints · Canadian crew · Free estimates</span>
+    </div>
+    <h1>Beautiful Paint.<br><em>Healthier Homes.</em></h1>
+    <p class="hero-sub">Eco Painting brings careful prep, premium low-odour coatings, and crisp finishes to homes and businesses across Toronto and the GTA — with less environmental impact and zero compromise on quality.</p>
+    <div class="hero-badges">
+      <div class="hero-badge"><span class="hero-badge-val">20+</span> Years serving the GTA</div>
+      <div class="hero-badge"><span class="hero-badge-val">500+</span> Projects completed</div>
+      <div class="hero-badge"><span class="hero-badge-val">4.9★</span> Average client rating</div>
+      <div class="hero-badge"><span class="hero-badge-val">100%</span> Satisfaction focus</div>
+    </div>
+    <div class="hero-ctas">
+      <button class="btn-hero-primary" onclick="openModal()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book Free Consultation
+      </button>
+      <a href="tel:+14165551234" class="btn-hero-phone">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.8a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8 8.09A16 16 0 0 0 14 14l.91-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 416-555-1234
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRUST RIBBON
+     ============================================================ -->
+<div class="trust-ribbon" role="region" aria-label="Trust indicators">
+  <div class="trust-ribbon-inner">
+    <div class="trust-ribbon-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <span class="trust-ribbon-item-text"><strong>Licensed &amp; Insured</strong>Full liability coverage</span>
+    </div>
+    <div class="trust-ribbon-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <span class="trust-ribbon-item-text"><strong>4.9★ Average</strong>Verified client reviews</span>
+    </div>
+    <div class="trust-ribbon-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span class="trust-ribbon-item-text"><strong>Since 2003</strong>20+ years of excellence</span>
+    </div>
+    <div class="trust-ribbon-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span class="trust-ribbon-item-text"><strong>100% Satisfaction</strong>We make it right, guaranteed</span>
+    </div>
+    <div class="trust-ribbon-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      <span class="trust-ribbon-item-text"><strong>Free Estimates</strong>Quick &amp; easy process</span>
+    </div>
+    <div class="trust-ribbon-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span class="trust-ribbon-item-text"><strong>Word-of-Mouth Reputation</strong>Built on community trust</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     STATS
+     ============================================================ -->
+<section class="stats-section" aria-labelledby="stats-heading">
+  <div class="wrap">
+    <div class="stats-header reveal">
+      <span class="section-label">By the Numbers</span>
+      <h2 id="stats-heading" class="section-title">Proof Is in the Record</h2>
+      <p class="section-subtitle mt-8">Two decades of careful work, measured in repeat clients and referrals.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card reveal reveal-delay-1">
+        <span class="stat-num" data-target="20" data-suffix="+">0<span class="suffix">+</span></span>
+        <span class="stat-label">Years in Business</span>
+      </div>
+      <div class="stat-card reveal reveal-delay-2">
+        <span class="stat-num" data-target="500" data-suffix="+">0<span class="suffix">+</span></span>
+        <span class="stat-label">Projects Completed</span>
+      </div>
+      <div class="stat-card reveal reveal-delay-3">
+        <span class="stat-num" data-target="100" data-suffix="%">0<span class="suffix">%</span></span>
+        <span class="stat-label">Satisfaction Commitment</span>
+      </div>
+      <div class="stat-card reveal reveal-delay-4">
+        <span class="stat-num" data-target="15" data-suffix="+">0<span class="suffix">+</span></span>
+        <span class="stat-label">GTA communities served</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     AWARDS SHOWCASE
+     ============================================================ -->
+<section class="awards-section" aria-labelledby="awards-heading">
+  <div class="wrap">
+    <div class="awards-inner">
+      <div class="awards-text reveal">
+        <span class="section-label">Our Promise</span>
+        <h2 id="awards-heading" class="section-title" style="color:white;">Painting That Puts People &amp; Planet First</h2>
+        <p>Eco Painting chooses low-VOC and water-based products whenever they suit your project, ventilates responsibly, and disposes of materials thoughtfully. You get durable colour, smooth coverage, and a crew that respects your space — without the harsh fumes many people remember from old-school painting.</p>
+        <div class="awards-stars-row">
+          <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span>
+          <span class="awards-stars-text">4.9 / 5 <span>average from verified client feedback</span></span>
+        </div>
+      </div>
+      <div class="awards-visual reveal reveal-delay-2" aria-hidden="true">
+        <div class="award-badge-large" style="padding:24px;">
+          <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#77BC43" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto;display:block;opacity:.95"><path d="M12 22c4-4 8-8 8-14a8 8 0 1 0-16 0c0 6 4 10 8 14z"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
+          <div class="award-badge-label">Low-VOC · Clean air priority</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section class="about-section" id="about" aria-labelledby="about-heading">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-media reveal">
+        <img
+          class="about-media-img"
+          src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1200&q=80"
+          alt="Bright interior with professional paint finish by Eco Painting"
+          loading="lazy"
+          onerror="this.style.display='none'; this.closest('.about-media').style.background='linear-gradient(135deg, #3D5A6B 0%, #77BC43 100%)';"
+        >
+        <div class="about-media-badge">
+          <div class="about-media-badge-icon">★</div>
+          <div class="about-media-badge-text">
+            <strong>4.9★</strong>
+            <span>Client rating</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-content reveal reveal-delay-2">
+        <span class="section-label">Our Story</span>
+        <h2 id="about-heading" class="section-title">Toronto Roots.<br>Future-Friendly Finishes.</h2>
+        <p>For more than twenty years, Eco Painting has helped homeowners and businesses refresh their spaces with durable coatings and a lighter environmental footprint. We grew through referrals and repeat clients — and we still measure success one happy customer at a time.</p>
+        <p>We still believe in the most reliable source of marketing: word of mouth. With community as the foundation of our business, we take pride in what we do and stop at nothing until all of our clients are fully satisfied — even the ones with the most stringent requirements.</p>
+        <p>Quality work takes time and skilled labour. All of our painters are experienced, knowledgeable, and friendly professionals. Speed is not a requirement and it is not rewarded.</p>
+        <blockquote class="about-quote">
+          "Your home is the most personal space you have — it deserves careful prep, clean air during the job, and a finish you will enjoy for years."
+          <cite>— Eco Painting team</cite>
+        </blockquote>
+        <ul class="about-checklist">
+          <li>
+            <span class="check-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Fully licensed and insured
+          </li>
+          <li>
+            <span class="check-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            100% satisfaction guarantee on every job
+          </li>
+          <li>
+            <span class="check-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Free detailed on-site estimates
+          </li>
+          <li>
+            <span class="check-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Clean, respectful crew on every project
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES
+     ============================================================ -->
+<section class="services-section" id="services" aria-labelledby="services-heading">
+  <div class="wrap">
+    <div class="services-header">
+      <div class="reveal">
+        <span class="section-label">What We Do</span>
+        <h2 id="services-heading" class="section-title">Expert Services for<br>Every Surface</h2>
+      </div>
+      <button class="btn-cta reveal reveal-delay-2" onclick="openModal()">Get a Free Quote</button>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card-v2 service-card-featured reveal" tabindex="0" role="button" aria-label="Interior & Exterior Painting — Learn more" onclick="openModal()">
+        <div class="service-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h4>Interior &amp; Exterior Painting</h4>
+        <p>Residential and commercial painting with low-VOC options, careful surface prep, and durable topcoats. We protect floors and furniture, ventilate smartly, and leave crisp lines you will notice every day.</p>
+        <span class="service-arrow">→</span>
+      </div>
+
+      <div class="service-card-v2 reveal reveal-delay-1" tabindex="0" role="button" aria-label="Colour and eco product consultation — Learn more" onclick="openModal()">
+        <div class="service-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+        </div>
+        <h4>Colour &amp; Eco Product Consultation</h4>
+        <p>Thoughtful palette planning plus guidance on low-odour paints, sheens, and products suited to kids' rooms, kitchens, and high-traffic areas.</p>
+        <span class="service-arrow">→</span>
+      </div>
+
+      <div class="service-card-v2 reveal reveal-delay-2" tabindex="0" role="button" aria-label="Cabinet & Furniture Painting — Learn more" onclick="openModal()">
+        <div class="service-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z M9 4v16 M9 9h11 M9 14h11"/></svg>
+        </div>
+        <h4>Cabinet &amp; Furniture Painting</h4>
+        <p>Kitchen cabinets and furniture refinished in our professional off-site spray booth for a factory-quality finish.</p>
+        <span class="service-arrow">→</span>
+      </div>
+
+      <div class="service-card-v2 reveal reveal-delay-1" tabindex="0" role="button" aria-label="Wood Staining & Refinishing — Learn more" onclick="openModal()">
+        <div class="service-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+        </div>
+        <h4>Wood Staining &amp; Refinishing</h4>
+        <p>Custom staining that enhances natural grain and texture. We restore, protect, and beautify all wood surfaces.</p>
+        <span class="service-arrow">→</span>
+      </div>
+
+      <div class="service-card-v2 reveal reveal-delay-2" tabindex="0" role="button" aria-label="Handyman Services — Learn more" onclick="openModal()">
+        <div class="service-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h4>Handyman Services</h4>
+        <p>Complementary handyman work to prepare, repair, and complete your painting project to perfection.</p>
+        <span class="service-arrow">→</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY CHOOSE US
+     ============================================================ -->
+<section class="why-section" aria-labelledby="why-heading">
+  <div class="wrap">
+    <div class="why-grid">
+      <div>
+        <div class="reveal">
+          <span class="section-label">Why Eco Painting</span>
+          <h2 id="why-heading" class="section-title">Care You Can See in Every Coat</h2>
+        </div>
+        <ul class="why-list mt-32">
+          <li class="why-item reveal reveal-delay-1">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="why-item-body">
+              <h4>Low-VOC &amp; Responsible Disposal</h4>
+              <p>We prioritize healthier product choices and clean job-site practices so your family and neighbours breathe easier during the project.</p>
+            </div>
+          </li>
+          <li class="why-item reveal reveal-delay-2">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="why-item-body">
+              <h4>Experienced, Vetted Professionals</h4>
+              <p>Every painter on your project is skilled, background-checked, and treats your home with respect.</p>
+            </div>
+          </li>
+          <li class="why-item reveal reveal-delay-3">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="why-item-body">
+              <h4>100% Satisfaction Guaranteed</h4>
+              <p>We don't leave until you're fully happy. Period. No fine print, no exceptions.</p>
+            </div>
+          </li>
+          <li class="why-item reveal reveal-delay-4">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="why-item-body">
+              <h4>On Time. On Budget.</h4>
+              <p>Transparent pricing, realistic timelines, and zero hidden surprises. We respect your home and schedule.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="why-visual reveal reveal-delay-2">
+        <div class="why-visual-rating">4.9<span class="out-of">/5</span></div>
+        <div class="why-visual-stars">★★★★★</div>
+        <div class="why-visual-source">Average from client feedback</div>
+        <div class="why-visual-divider"></div>
+        <div class="why-visual-stat">
+          <div class="why-visual-stat-num">500+</div>
+          <div class="why-visual-stat-label">Projects in the GTA</div>
+        </div>
+        <div class="why-visual-stat">
+          <div class="why-visual-stat-num">20+</div>
+          <div class="why-visual-stat-label">Years in business</div>
+        </div>
+        <div class="why-visual-stat">
+          <div class="why-visual-stat-num">100%</div>
+          <div class="why-visual-stat-label">Satisfaction commitment</div>
+        </div>
+        <button class="btn-band-primary mt-24" onclick="openModal()" style="font-size:14px;padding:14px 24px;min-height:48px;width:100%;justify-content:center;">
+          Book Your Free Estimate
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-heading">
+  <div class="wrap">
+    <div class="testimonials-header reveal">
+      <span class="section-label">Client Reviews</span>
+      <h2 id="testimonials-heading" class="section-title">What Our Clients Say</h2>
+      <p class="section-subtitle mt-8">Real feedback from Toronto-area homeowners and contractors who chose Eco Painting.</p>
+    </div>
+    <div class="testimonials-track-wrap reveal">
+      <div class="testimonials-track" id="testimonialsTrack">
+
+        <div class="testimonial-card-v2">
+          <div class="t-header">
+            <div class="t-stars">★★★★★</div>
+            <span class="t-source-badge google">Google</span>
+          </div>
+          <p class="t-quote">This is my third time using Eco Painting. They do a fantastic job every time — sharp lines, no paint where it should not be, and the crew is respectful of our home. I would not call anyone else.</p>
+          <div class="t-author">
+            <div class="t-avatar">M</div>
+            <div>
+              <div class="t-name">M.M.</div>
+              <div class="t-location">Toronto, ON</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card-v2">
+          <div class="t-header">
+            <div class="t-stars">★★★★★</div>
+            <span class="t-source-badge homestars">Verified</span>
+          </div>
+          <p class="t-quote">Look no further — professional, courteous, and the results were absolutely stunning. Our living room feels brighter and the low-odour paint made a real difference for our family.</p>
+          <div class="t-author">
+            <div class="t-avatar">N</div>
+            <div>
+              <div class="t-name">N.K.</div>
+              <div class="t-location">Toronto, ON</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card-v2">
+          <div class="t-header">
+            <div class="t-stars">★★★★★</div>
+            <span class="t-source-badge homestars">Verified</span>
+          </div>
+          <p class="t-quote">From prep to cleanup, every detail was handled with care. They walked us through colour and finish options without pressure. Best refresh we have invested in for years.</p>
+          <div class="t-author">
+            <div class="t-avatar">K</div>
+            <div>
+              <div class="t-name">K.B.</div>
+              <div class="t-location">Toronto, ON</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card-v2">
+          <div class="t-header">
+            <div class="t-stars">★★★★★</div>
+            <span class="t-source-badge google">Google</span>
+          </div>
+          <p class="t-quote">Professional, efficient, and they left the place spotless. Communication was clear from the quote through the final walkthrough. Highly recommended for anyone who wants quality without the chemical smell.</p>
+          <div class="t-author">
+            <div class="t-avatar">J</div>
+            <div>
+              <div class="t-name">J.S.</div>
+              <div class="t-location">Scarborough, ON</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card-v2">
+          <div class="t-header">
+            <div class="t-stars">★★★★★</div>
+            <span class="t-source-badge homestars">Verified</span>
+          </div>
+          <p class="t-quote">Best painters in the GTA — full stop. Communication was excellent, the work was immaculate, and the price was fair. I refer friends and family to Eco Painting without hesitation.</p>
+          <div class="t-author">
+            <div class="t-avatar">R</div>
+            <div>
+              <div class="t-name">R.T.</div>
+              <div class="t-location">Mississauga, ON</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card-v2">
+          <div class="t-header">
+            <div class="t-stars">★★★★★</div>
+            <span class="t-source-badge homestars">Verified</span>
+          </div>
+          <p class="t-quote">As a contractor with decades in the industry, I recommend Eco Painting to clients who care about clean execution and products that are easier on indoor air. Workmanship and reliability are top tier.</p>
+          <div class="t-author">
+            <div class="t-avatar">T</div>
+            <div>
+              <div class="t-name">T.M.</div>
+              <div class="t-location">Toronto, ON</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="testimonials-controls reveal">
+      <button class="t-arrow" id="prevBtn" aria-label="Previous review" onclick="moveCarousel(-1)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="t-dot active" data-index="0" onclick="goToSlide(0)" aria-label="Go to review 1"></button>
+      <button class="t-dot" data-index="1" onclick="goToSlide(1)" aria-label="Go to review 2"></button>
+      <button class="t-dot" data-index="2" onclick="goToSlide(2)" aria-label="Go to review 3"></button>
+      <button class="t-arrow" id="nextBtn" aria-label="Next review" onclick="moveCarousel(1)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     AREAS SERVED
+     ============================================================ -->
+<section class="areas-section" id="areas" aria-labelledby="areas-heading">
+  <div class="wrap">
+    <div class="areas-grid">
+      <div class="areas-content reveal">
+        <span class="section-label">Service Area</span>
+        <h2 id="areas-heading" class="section-title">Proudly Serving Toronto &amp; The GTA</h2>
+        <p>Based in Toronto with deep local experience, our team serves homeowners and businesses across the Greater Toronto Area. If you are nearby, we would love to help.</p>
+        <div class="areas-chips">
+          <span class="area-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Toronto
+          </span>
+          <span class="area-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Scarborough
+          </span>
+          <span class="area-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Mississauga
+          </span>
+          <span class="area-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Brampton
+          </span>
+          <span class="area-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Markham
+          </span>
+          <span class="area-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Richmond Hill
+          </span>
+          <span class="area-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            North York
+          </span>
+          <span class="area-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Etobicoke
+          </span>
+        </div>
+        <button class="btn-cta" onclick="openModal()">Check Your Area</button>
+      </div>
+      <div class="areas-map-placeholder reveal reveal-delay-2" aria-label="Greater Toronto Area service coverage map">
+        <div class="areas-map-dots" aria-hidden="true">
+          <span class="map-dot" style="top:42%;left:48%"></span>
+          <span class="map-dot" style="top:55%;left:38%;width:8px;height:8px;opacity:.8"></span>
+          <span class="map-dot" style="top:35%;left:60%;width:8px;height:8px;opacity:.8"></span>
+          <span class="map-dot" style="top:50%;left:62%;width:7px;height:7px;opacity:.6"></span>
+          <span class="map-dot" style="top:65%;left:52%;width:7px;height:7px;opacity:.6"></span>
+          <span class="map-dot" style="top:30%;left:42%;width:7px;height:7px;opacity:.6"></span>
+          <span class="map-dot" style="top:60%;left:28%;width:6px;height:6px;opacity:.5"></span>
+          <span class="map-dot" style="top:28%;left:55%;width:6px;height:6px;opacity:.5"></span>
+        </div>
+        <div class="areas-map-label">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 12px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <strong>Toronto &amp; Greater Toronto Area</strong>
+          <span>Serving the GTA since 2003</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="faq-section" id="faq" aria-labelledby="faq-heading">
+  <div class="wrap-sm">
+    <div class="faq-header reveal">
+      <span class="section-label">FAQ</span>
+      <h2 id="faq-heading" class="section-title">Common Questions, Honest Answers</h2>
+      <p class="section-subtitle">Everything you need to know before we start your project.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item-v2 reveal">
+        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+          How long has Eco Painting been in business?
+          <span class="faq-chevron" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq-body" role="region">
+          <div class="faq-body-inner">Eco Painting has served Toronto and the GTA for over twenty years. We have built our reputation through referrals, repeat clients, and a focus on durable finishes and responsible product choices.</div>
+        </div>
+      </div>
+
+      <div class="faq-item-v2 reveal reveal-delay-1">
+        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+          What areas do you service?
+          <span class="faq-chevron" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq-body" role="region">
+          <div class="faq-body-inner">We proudly serve Toronto and the entire Greater Toronto Area, including Scarborough, Mississauga, Brampton, Markham, Richmond Hill, North York, Etobicoke, and surrounding communities. Contact us to confirm availability for your location.</div>
+        </div>
+      </div>
+
+      <div class="faq-item-v2 reveal reveal-delay-2">
+        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+          Do you provide free estimates?
+          <span class="faq-chevron" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq-body" role="region">
+          <div class="faq-body-inner">Yes — we provide free, no-obligation on-site estimates for all projects. One of our team members will visit your property, assess the scope of work, and provide a detailed, transparent quote. We make the process quick and easy.</div>
+        </div>
+      </div>
+
+      <div class="faq-item-v2 reveal reveal-delay-1">
+        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+          How long does a typical painting project take?
+          <span class="faq-chevron" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq-body" role="region">
+          <div class="faq-body-inner">Project timelines depend on scope, size, and complexity. We prioritize quality over speed — rushing always leads to inferior results. We provide a realistic timeline during your free estimate and keep you informed throughout. Our goal is a result you'll love, not just a job that's finished quickly.</div>
+        </div>
+      </div>
+
+      <div class="faq-item-v2 reveal reveal-delay-2">
+        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+          Are your painters licensed and insured?
+          <span class="faq-chevron" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq-body" role="region">
+          <div class="faq-body-inner">Absolutely. All of our painters are fully licensed and insured. Your property and our team are protected throughout every project. We carry comprehensive liability coverage so you can have complete peace of mind.</div>
+        </div>
+      </div>
+
+      <div class="faq-item-v2 reveal reveal-delay-1">
+        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+          Do you offer a satisfaction guarantee?
+          <span class="faq-chevron" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq-body" role="region">
+          <div class="faq-body-inner">We stand behind every project with a 100% satisfaction guarantee. If you're not completely happy with the results, we'll make it right. Our reputation is built on delivering exceptional work every single time — that's not a slogan, it's our standard.</div>
+        </div>
+      </div>
+
+      <div class="faq-item-v2 reveal reveal-delay-2">
+        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+          What payment methods do you accept?
+          <span class="faq-chevron" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq-body" role="region">
+          <div class="faq-body-inner">We accept cash, cheque, and all major credit cards including Visa, Mastercard, and American Express. Payment terms are discussed and agreed upon during your estimate. We're flexible and work with your preferences and schedule.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA BAND
+     ============================================================ -->
+<section class="cta-band" aria-labelledby="cta-heading">
+  <div class="wrap cta-band-inner reveal">
+    <span class="section-label">Ready to Start?</span>
+    <h2 id="cta-heading">Your Home Deserves the Best.<br>Let's Make It Happen.</h2>
+    <p>Free consultation. No obligation. Honest guidance on colour, finishes, and low-VOC options for your space.</p>
+    <div class="cta-band-btns">
+      <button class="btn-band-primary" onclick="openModal()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book Free Consultation
+      </button>
+      <a href="tel:+14165551234" class="btn-band-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.8a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8 8.09A16 16 0 0 0 14 14l.91-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 416-555-1234
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="./ecopainting-logo.png" alt="Eco Painting" loading="lazy">
+        <p>Toronto and GTA eco-friendly painting with low-VOC options, careful prep, and finishes built to last. Free estimates.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#areas">Areas Served</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Interior Painting</a></li>
+          <li><a href="#services">Exterior Painting</a></li>
+          <li><a href="#services">Colour consultation</a></li>
+          <li><a href="#services">Cabinet Painting</a></li>
+          <li><a href="#services">Wood Staining</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <div class="footer-contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.8a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8 8.09A16 16 0 0 0 14 14l.91-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+14165551234">416-555-1234</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:hello@ecopainting.ca">hello@ecopainting.ca</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Toronto &amp; GTA, Ontario
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Eco Painting. All rights reserved. Photography on this site is illustrative of professional painting projects.</p>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     BOOKING MODAL
+     ============================================================ -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box" id="modalBox">
+    <div class="modal-head">
+      <div class="modal-head-text">
+        <span class="section-label">Free Consultation</span>
+        <h3 id="modal-title">Book Your Free Estimate</h3>
+      </div>
+      <button class="modal-close-btn" onclick="closeModal()" aria-label="Close booking form" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="modal-body" id="modalFormBody">
+      <form onsubmit="submitForm(event)" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="m-name">Full Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="m-name" name="name" required aria-required="true" autocomplete="name" placeholder="Jane Smith">
+          </div>
+          <div class="form-group">
+            <label for="m-email">Email Address <span aria-hidden="true">*</span></label>
+            <input type="email" id="m-email" name="email" required aria-required="true" autocomplete="email" placeholder="jane@email.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="m-phone">Phone Number <span aria-hidden="true">*</span></label>
+            <input type="tel" id="m-phone" name="phone" required aria-required="true" autocomplete="tel" placeholder="416-555-0000">
+          </div>
+          <div class="form-group">
+            <label for="m-service">Service Needed <span aria-hidden="true">*</span></label>
+            <select id="m-service" name="service" required aria-required="true">
+              <option value="">Select a service…</option>
+              <option value="interior">Interior Painting</option>
+              <option value="exterior">Exterior Painting</option>
+              <option value="consultation">Colour &amp; eco product consultation</option>
+              <option value="cabinets">Cabinet Painting</option>
+              <option value="staining">Wood Staining &amp; Refinishing</option>
+              <option value="handyman">Handyman Services</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="m-message">Project Details (optional)</label>
+          <textarea id="m-message" name="message" placeholder="Tell us about your space, timeline, any specific requirements…"></textarea>
+        </div>
+        <button type="submit" class="form-submit-btn" id="submitBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send My Request
+        </button>
+      </form>
+    </div>
+    <div class="modal-success-state" id="modalSuccess">
+      <div class="success-circle">✓</div>
+      <h3>Request Received!</h3>
+      <p>Thank you for reaching out. We'll be in touch shortly to confirm your free consultation.</p>
+      <div class="success-detail">Expected reply: within 2 business hours</div>
+      <button class="btn-band-primary" onclick="closeModal()" style="font-size:15px;padding:14px 28px;min-height:48px;margin:0 auto;display:inline-flex;">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MOBILE CTA BAR
+     ============================================================ -->
+<div class="mobile-bar" id="mobileBar" role="navigation" aria-label="Quick contact">
+  <a href="tel:+14165551234" class="mobile-bar-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.8a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8 8.09A16 16 0 0 0 14 14l.91-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Now
+  </a>
+  <button class="mobile-bar-book" onclick="openModal()">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    Book Free Quote
+  </button>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+// ─── HEADER SCROLL BEHAVIOUR ────────────────────────────────────
+const header = document.getElementById('site-header');
+function onScroll() {
+  header.classList.toggle('scrolled', window.scrollY > 60);
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// ─── HERO BG LOAD TRANSITION ────────────────────────────────────
+const heroBg = document.getElementById('heroBg');
+const bgImg = new Image();
+bgImg.src = 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1920&q=80';
+bgImg.onload = () => { heroBg.classList.add('loaded'); };
+
+// ─── MOBILE BAR ─────────────────────────────────────────────────
+const mobileBar = document.getElementById('mobileBar');
+function updateMobileBar() {
+  mobileBar.classList.toggle('visible', window.innerWidth < 769);
+}
+window.addEventListener('resize', updateMobileBar, { passive: true });
+updateMobileBar();
+
+// ─── MODAL ──────────────────────────────────────────────────────
+const overlay = document.getElementById('modalOverlay');
+let lastFocus = null;
+
+function openModal() {
+  lastFocus = document.activeElement;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => {
+    const first = overlay.querySelector('input, select, textarea, button');
+    if (first) first.focus();
+  }, 350);
+}
+
+function closeModal() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+  // Reset form
+  setTimeout(() => {
+    document.getElementById('modalFormBody').style.display = 'block';
+    document.getElementById('modalSuccess').classList.remove('show');
+    overlay.querySelector('form').reset();
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = false;
+    btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send My Request`;
+  }, 300);
+  if (lastFocus) lastFocus.focus();
+}
+
+overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+  // Focus trap
+  if (e.key === 'Tab' && overlay.classList.contains('open')) {
+    const focusable = [...overlay.querySelectorAll('a,button,input,select,textarea,[tabindex]:not([tabindex="-1"])')].filter(el => !el.disabled);
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+});
+
+function submitForm(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  setTimeout(() => {
+    document.getElementById('modalFormBody').style.display = 'none';
+    const s = document.getElementById('modalSuccess');
+    s.classList.add('show');
+    s.querySelector('button').focus();
+  }, 1200);
+}
+
+// ─── FAQ ACCORDION ──────────────────────────────────────────────
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item-v2');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item-v2.open').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+// ─── TESTIMONIALS CAROUSEL ──────────────────────────────────────
+const track = document.getElementById('testimonialsTrack');
+const dots = document.querySelectorAll('.t-dot');
+let currentSlide = 0;
+let slidesVisible = 3;
+let totalSlides;
+let autoSlide;
+
+function getSlidesVisible() {
+  if (window.innerWidth < 640) return 1;
+  if (window.innerWidth < 1024) return 2;
+  return 3;
+}
+
+function renderCarousel() {
+  slidesVisible = getSlidesVisible();
+  const cards = track.querySelectorAll('.testimonial-card-v2');
+  cards.forEach(c => {
+    const gap = 24;
+    c.style.width = `calc((100% - ${gap * (slidesVisible - 1)}px) / ${slidesVisible})`;
+  });
+  totalSlides = Math.max(0, cards.length - slidesVisible);
+  if (currentSlide > totalSlides) currentSlide = totalSlides;
+  setSlide(currentSlide);
+  updateDots();
+}
+
+function setSlide(index) {
+  currentSlide = Math.max(0, Math.min(index, totalSlides));
+  const cards = track.querySelectorAll('.testimonial-card-v2');
+  const cardW = cards[0] ? cards[0].offsetWidth + 24 : 0;
+  track.style.transform = `translateX(-${currentSlide * cardW}px)`;
+  updateDots();
+}
+
+function updateDots() {
+  dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+}
+
+function moveCarousel(dir) {
+  setSlide(currentSlide + dir);
+  resetAutoSlide();
+}
+
+function goToSlide(i) {
+  setSlide(i);
+  resetAutoSlide();
+}
+
+function startAutoSlide() {
+  autoSlide = setInterval(() => {
+    setSlide(currentSlide >= totalSlides ? 0 : currentSlide + 1);
+  }, 5000);
+}
+
+function resetAutoSlide() {
+  clearInterval(autoSlide);
+  startAutoSlide();
+}
+
+window.addEventListener('resize', renderCarousel, { passive: true });
+renderCarousel();
+startAutoSlide();
+
+// ─── SCROLL REVEAL ──────────────────────────────────────────────
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ─── ANIMATED COUNTERS ──────────────────────────────────────────
+function animateCounter(el) {
+  const target = +el.dataset.target;
+  const suffix = el.dataset.suffix || '';
+  const duration = 1800;
+  const start = performance.now();
+  const isLarge = target > 100;
+
+  function step(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    // Ease out cubic
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const value = Math.round(ease * target);
+    const display = isLarge ? value.toLocaleString() : value;
+    el.innerHTML = `${display}<span class="suffix">${suffix}</span>`;
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.target.dataset.target) {
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el));
+
+// ─── SMOOTH SCROLL ──────────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (!href || href === '#') return;
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      const headerH = header.offsetHeight;
+      const y = target.getBoundingClientRect().top + window.scrollY - headerH - 16;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  });
+});
+
+// ─── ACTIVE NAV HIGHLIGHT ────────────────────────────────────────
+const navSections = ['about', 'services', 'testimonials', 'faq', 'areas']
+  .map(id => document.getElementById(id))
+  .filter(Boolean);
+const navLinks = document.querySelectorAll('.header-nav a');
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('nav-active'));
+      const active = document.querySelector(`.header-nav a[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('nav-active');
+    }
+  });
+}, { rootMargin: '-30% 0px -60% 0px' });
+
+navSections.forEach(s => navObserver.observe(s));
+</script>
+</body>
+</html>
